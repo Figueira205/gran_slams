@@ -1,0 +1,248 @@
+/* ======= ESTILOS GENERALES ======= */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #353535;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 94.9%;
+    height: 59px;
+    background: #353535;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    color: #ff9900;
+  }
+
+/* ======= SECCIÓN MENÚ ======= */
+.menu-section {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.menu-section h1 {
+    font-size: 2.5rem;
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+
+.menu-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#descu{
+    color: aliceblue;
+}
+
+#descu p{
+    margin-bottom: 5px;
+}
+
+/* ======= LISTADO DE MENÚ EN 2 COLUMNAS ======= */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ======= ITEM DE MENÚ ======= */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 457px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 119, 8, 0.15);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-item2 {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 963px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 119, 8, 0.15);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu-item:hover{
+    box-shadow: 0px 4px 10px rgb(255, 126, 20);
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+}
+
+.menu-item2:hover{
+    box-shadow: 0px 4px 10px rgb(255, 126, 20);
+}
+
+.menu-item2:hover {
+    transform: scale(1.02);
+}
+
+.menu-image {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.menu-text {
+    width: 100%;
+}
+
+.menu-text h3 {
+    font-size: 1.2rem;
+    color: #222;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5500;
+}
+
+/* ======= MODAL PARA EXPANDIR IMÁGENES ======= */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ======= RESPONSIVE DESIGN (SIEMPRE 2 COLUMNAS) ======= */
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: 1fr; /* Solo una columna en móviles */
+        gap: 15px;
+    }
+
+    .menu-item {
+        max-width: 87%; /* Se ajusta al 90% del ancho de la pantalla */
+        height: 84%; 
+    }
+
+    .menu-item2 {
+        max-width: 87%; /* Se ajusta al 90% del ancho de la pantalla */
+        height: 84%; 
+    }
+
+    .menu-image {
+        width: 80px; /* Reduce el tamaño de la imagen en pantallas pequeñas */
+    }
+}
+/* ======= MODO EXTRA PEQUEÑO (AJUSTE PARA MÓVILES ESTRECHOS) ======= */
+@media (max-width: 600px) {
+    .menu-container {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+
+    .menu-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-item2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-image {
+        width: 90px;
+        height: auto;
+        margin-bottom: 5px;
+    }
+}
+
+/* ======= TITULO DE CATEGORÍA CENTRADO ======= */
+.category-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #ff5500;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+}
+
+.category-title h2{
+    margin-top: 5px;
+    margin-bottom: 42px;
+}
