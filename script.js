@@ -40,3 +40,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".menu-image");
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("expanded-img");
+  const closeBtn = document.querySelector(".close");
+
+  images.forEach(img => {
+      img.addEventListener("click", function () {
+          modal.style.display = "flex";
+          modalImg.src = this.src;
+      });
+  });
+
+  closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+  });
+
+  modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+});
+
