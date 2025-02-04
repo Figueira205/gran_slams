@@ -232,6 +232,19 @@ body {
     }
 }
 
+@media (max-width: 360px) {
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar{
+        padding: 0.5rem 0rem;
+    }
+    .nav-links{
+        gap: 1rem;
+    }
+}
+
 /* ======= TITULO DE CATEGORÍA CENTRADO ======= */
 .category-title {
     width: 100%;
